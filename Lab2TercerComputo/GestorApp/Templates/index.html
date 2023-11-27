@@ -12,6 +12,8 @@
 <body>
     {% if es_estudiante %}
         <h1>Bienvenido {{ user.username }} al área de Estudiantes</h1>
+        <a href="{% url 'listado_proveedores' %}">Ver proveedores</a></p>
+        <a href="{% url 'listado_producto' %}">Ver productos</a></p>
     {% elif es_admin %}
         <h1>Bienvenido {{ user.username }} al área de Administradores</h1>
         <a href="{% url 'agregar_proveedor' %}">Agregar Proveedor</a></p>
