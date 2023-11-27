@@ -31,6 +31,8 @@ Corre la aplicación
 python manage.py runserver
 ```
 
+Puede ingresar a las paginas creando un superusuario o creando una cuenta en "registro/"
+
 ## Desarrolladores
 
 - Jefferson Esperanza (SMSS132422)
