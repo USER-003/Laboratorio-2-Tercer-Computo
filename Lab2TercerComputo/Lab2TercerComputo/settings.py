@@ -84,14 +84,14 @@ DATABASES = {
 """
 
 DATABASES = {
-	"default" : {
-	    "ENGINE": "django.db.backends.postgresql",
-	    "NAME" : "Lab2TercerComputo",
-	    "USER" : "postgres",
-	    "PASSWORD" : "123abc123",
-	    "HOST" : "localhost",
-	    "PORT" : 5432,
-	}
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME':  'Lab2TercerComputo',
+        'USER':'postgres',
+        'PASSWORD': '123abc123',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
 }
 
 

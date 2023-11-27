@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+        crossorigin="anonymous"/>
+    <title>HOME</title>
+</head>
+<body>
+    {% if es_estudiante %}
+        <h1>Bienvenido {{ user.username }} al área de Estudiantes</h1>
+    {% elif es_admin %}
+        <h1>Bienvenido {{ user.username }} al área de Administradores</h1>
+        <a href="{% url 'agregar_proveedor' %}">Agregar Proveedor</a></p>
+        <a href="{% url 'agregar_producto' %}">Agregar Producto</a></p>
+    {% else %}
+        <h1>No tienes permisos para acceder a esta página</h1>
+    {% endif %}
+<a href="{% url 'logout' %}">Cerrar sesión</a>
+</body>
+</html>
