@@ -35,4 +35,4 @@ python manage.py runserver
 
 - Jefferson Esperanza (SMSS132422)
 - Sofia Romero (SMSS042622)
-- Gerson Argueta (SMSS021722)
+- Gerson Argueta(SMSS021722)
