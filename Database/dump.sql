@@ -352,9 +352,11 @@ ALTER TABLE public.django_session OWNER TO postgres;
 --
 
 COPY public."GestorApp_productos" (id, nombre, stock, fk_prov_id) FROM stdin;
-1	Cafe	20	2
-2	Cafe	20	2
-3	Cafe	20	2
+4	Lapices	10	11
+5	Libros	20	23
+6	Computadoras	12	6
+7	Carros	2	10
+8	Casa	23	22
 \.
 
 
@@ -363,28 +365,11 @@ COPY public."GestorApp_productos" (id, nombre, stock, fk_prov_id) FROM stdin;
 --
 
 COPY public."GestorApp_proveedores" (id, nombre, telefono) FROM stdin;
-1	Gerson	
-2	Gerson	
-3	Gerson	
-4	Gerson	7878787
-5	Gerson	7878787
 6	Gerson	7878787
-7	Argueta	78945612
-8	Argueta	789456
-9	Argueta	789456
 10	Argueta	789456
-11	GersonArg	7878787
-12	Argueta	12345678
-13	Argueta	12345678
-14	Argueta	12345678
-15	Argueta	12345678
-16	Argueta	12345678
-17	Argueta	12345678
-18	Argueta12	12345678
-19	Argueta12	12345678
-20	Argueta12	12345678
-21	Argueta12	12345678
-22	Argueta12	12345678
+11	Sofia	7878787
+22	Margarita	12345678
+23	Jefferson	40568545
 \.
 
 
@@ -451,10 +436,9 @@ COPY public.auth_permission (id, name, content_type_id, codename) FROM stdin;
 --
 
 COPY public.auth_user (id, password, last_login, is_superuser, username, first_name, last_name, email, is_staff, is_active, date_joined) FROM stdin;
-2	pbkdf2_sha256$600000$Ir70XVARWTHBBsJYw8ToOW$gqLYRw3KV7Vku7S1xcr15cWujsQybRgXaVX2PBW6uAI=	2023-11-26 21:48:39.939607-06	f	Gerson2			gerson1210argueta@gmail.com	f	t	2023-11-26 21:41:47.757317-06
-4	pbkdf2_sha256$600000$lGOYdHSO298EE8ggDoGeWw$A+HDaSTCAyDRjqQmnB2eJkDbP81ot8rHh1GDN9IATik=	2023-11-26 22:16:39.781133-06	f	GersonAd2			gerson1210argueta@gmail.com	f	t	2023-11-26 22:05:10.703644-06
-3	pbkdf2_sha256$600000$vXaT2sizIIlckoC2ADoAsP$dfZ4uSULmbssUYETnDMq2eeAMO1uaHnActTIX5RM3/g=	2023-11-27 00:22:32.824096-06	f	GersonAd			gerson1210argueta@gmail.com	f	t	2023-11-26 22:04:12.721861-06
-1	pbkdf2_sha256$600000$x4tcnXZ4g6uDzWXpkEn6Wv$I/NFS8vuaMTGX8d2kfhSYN7mdbT8ryTM6hykOJu1JsI=	2023-11-27 00:23:02.438169-06	t	Gerson			gerson1210argueta@gmail.com	t	t	2023-11-26 21:05:40.691971-06
+3	pbkdf2_sha256$600000$aN26Lc0lGAxI5u2Q5iXmUC$DpABFUx3h1emY+X/1Bi8Rd6+xWuNhnmFOZyORMVt8I4=	2023-11-27 00:36:51.874954-06	f	Jefferson			jefferson.esperanza.03@gmail.com	f	t	2023-11-27 00:18:33.283605-06
+2	pbkdf2_sha256$600000$s6efi4cIP5upe7gGeQ2Hcg$MWIpzm/IsS+WSDhVABhoNQZANnlbOaL9+2Lv538S8Hs=	2023-11-27 01:52:47.59128-06	f	morningstar			joshue.esperanza.3@gmail.com	f	t	2023-11-26 22:38:40.344038-06
+1	pbkdf2_sha256$600000$mYCfnSVUg2kmYhWeysIZRY$hbxhW8Qk4v/b5dzaqiWgDgfiiSMkR6/X3+YaN0458mg=	2023-11-27 02:08:16.697134-06	t	Administrador			jefferson.esperanza.03@gmail.com	t	t	2023-11-26 22:32:01.256521-06
 \.
 
 
@@ -463,9 +447,8 @@ COPY public.auth_user (id, password, last_login, is_superuser, username, first_n
 --
 
 COPY public.auth_user_groups (id, user_id, group_id) FROM stdin;
-1	2	1
+1	2	2
 2	3	2
-3	4	2
 \.
 
 
@@ -482,6 +465,32 @@ COPY public.auth_user_user_permissions (id, user_id, permission_id) FROM stdin;
 --
 
 COPY public.django_admin_log (id, action_time, object_id, object_repr, action_flag, change_message, content_type_id, user_id) FROM stdin;
+1	2023-11-27 02:09:23.358074-06	21	Argueta12	3		8	1
+2	2023-11-27 02:09:23.364196-06	20	Argueta12	3		8	1
+3	2023-11-27 02:09:23.365207-06	19	Argueta12	3		8	1
+4	2023-11-27 02:09:23.365207-06	18	Argueta12	3		8	1
+5	2023-11-27 02:09:23.366218-06	17	Argueta	3		8	1
+6	2023-11-27 02:09:23.367223-06	16	Argueta	3		8	1
+7	2023-11-27 02:09:23.367223-06	15	Argueta	3		8	1
+8	2023-11-27 02:09:23.368241-06	14	Argueta	3		8	1
+9	2023-11-27 02:09:23.36932-06	13	Argueta	3		8	1
+10	2023-11-27 02:09:23.370328-06	12	Argueta	3		8	1
+11	2023-11-27 02:09:23.371327-06	9	Argueta	3		8	1
+12	2023-11-27 02:09:23.372413-06	8	Argueta	3		8	1
+13	2023-11-27 02:09:23.372413-06	7	Argueta	3		8	1
+14	2023-11-27 02:09:23.373426-06	5	Gerson	3		8	1
+15	2023-11-27 02:09:23.373426-06	4	Gerson	3		8	1
+16	2023-11-27 02:09:23.374445-06	3	Gerson	3		8	1
+17	2023-11-27 02:09:23.374445-06	2	Gerson	3		8	1
+18	2023-11-27 02:09:23.375467-06	1	Gerson	3		8	1
+19	2023-11-27 02:09:38.516756-06	11	Sofia	2	[{"changed": {"fields": ["Nombre"]}}]	8	1
+20	2023-11-27 02:09:47.527808-06	22	Margarita	2	[{"changed": {"fields": ["Nombre"]}}]	8	1
+21	2023-11-27 02:10:05.807422-06	23	Jefferson	1	[{"added": {}}]	8	1
+22	2023-11-27 02:10:22.545426-06	4	Lapices	2	[]	7	1
+23	2023-11-27 02:10:38.856323-06	5	Libros	1	[{"added": {}}]	7	1
+24	2023-11-27 02:10:54.484969-06	6	Computadoras	1	[{"added": {}}]	7	1
+25	2023-11-27 02:11:05.650319-06	7	Carros	1	[{"added": {}}]	7	1
+26	2023-11-27 02:11:27.461249-06	8	Casa	1	[{"added": {}}]	7	1
 \.
 
 
@@ -524,7 +533,7 @@ COPY public.django_migrations (id, app, name, applied) FROM stdin;
 16	auth	0011_update_proxy_permissions	2023-11-21 21:12:57.587128-06
 17	auth	0012_alter_user_first_name_max_length	2023-11-21 21:12:57.602418-06
 18	sessions	0001_initial	2023-11-21 21:12:57.628193-06
-19	GestorApp	0001_initial	2023-11-26 20:46:17.414738-06
+19	GestorApp	0001_initial	2023-11-26 21:52:40.816276-06
 \.
 
 
@@ -535,6 +544,7 @@ COPY public.django_migrations (id, app, name, applied) FROM stdin;
 COPY public.django_session (session_key, session_data, expire_date) FROM stdin;
 g4a5vyaoiykrrbx2qlsi5jbrkvgtyd00	.eJxVjEEOwiAQRe_C2hBgGNq6dO8ZyDBDpWpoUtqV8e7apAvd_vfef6lI21ri1vISJ1FnZdXpd0vEj1x3IHeqt1nzXNdlSnpX9EGbvs6Sn5fD_Tso1Mq3duDZdAgAyD0LBYBADAPAkGxwiTE4iwnR9QQSPPssnRhrScw4OlTvD7nvNyc:1r7SEN:3SXhySnpFBrcfQF2XaqKtyCLsSmLykMaiGPucfpS2s0	2023-12-10 21:24:19.041973-06
 8tc627ucx3svvmphxbyd6r1ppghzvzvv	.eJxVjEEOwiAQRe_C2hBgGNq6dO8ZyDBDpWpoUtqV8e7apAvd_vfef6lI21ri1vISJ1FnZdXpd0vEj1x3IHeqt1nzXNdlSnpX9EGbvs6Sn5fD_Tso1Mq3duDZdAgAyD0LBYBADAPAkGxwiTE4iwnR9QQSPPssnRhrScw4OlTvD7nvNyc:1r7V1K:SkAr7SLqtiZvtX6Nkky68pIJFQvez-9eWoMaYxHgkeU	2023-12-11 00:23:02.440151-06
+jfvf15citj0tvrivexsoyu13eg6m5dqn	.eJxVjMEOwiAQRP-FsyFLl7Do0bvfQBZYpGpoUtqT8d9tkx70Npn3Zt4q8LrUsHaZw5jVRRl1-u0ip6e0HeQHt_uk09SWeYx6V_RBu75NWV7Xw_07qNzrthYwBaKNmc-GxKUtCTJ5oAhs3SDJQfEACGSgcPGI1pIdMEsm9KQ-X-0TN40:1r7WfA:gj6A8rk_AJrINdO_WU2_hxV97heImcqbeK4OoNxWg50	2023-12-11 02:08:16.701872-06
 \.
 
 
@@ -542,14 +552,14 @@ g4a5vyaoiykrrbx2qlsi5jbrkvgtyd00	.eJxVjEEOwiAQRe_C2hBgGNq6dO8ZyDBDpWpoUtqV8e7apA
 -- Name: GestorApp_productos_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public."GestorApp_productos_id_seq"', 3, true);
+SELECT pg_catalog.setval('public."GestorApp_productos_id_seq"', 8, true);
 
 
 --
 -- Name: GestorApp_proveedores_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public."GestorApp_proveedores_id_seq"', 22, true);
+SELECT pg_catalog.setval('public."GestorApp_proveedores_id_seq"', 23, true);
 
 
 --
@@ -598,7 +608,7 @@ SELECT pg_catalog.setval('public.auth_user_user_permissions_id_seq', 1, false);
 -- Name: django_admin_log_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.django_admin_log_id_seq', 1, false);
+SELECT pg_catalog.setval('public.django_admin_log_id_seq', 26, true);
 
 
 --
