@@ -41,5 +41,9 @@ def cerrar_sesion(request):
 
 @login_required(login_url='login')
 def index(request):
-    return render(request, 'index.html', {'user': request.user})
+    es_estudiante = request.user.groups.filter(name='Estudiante').exists()
+    es_admin = request.user.is_staff
+    if es_estudiante or es_admin:
+        return render(request, 'index.html', {'user': request.user, 'es_estudiante': es_estudiante,'es_admin':es_admin})
+
 
