@@ -1,25 +1,37 @@
-<form action="" method="post">
-  {% csrf_token %}
-  <div class="form-group">
-    <label for="{{ form.username.id_for_label }}">Nombre de usuario:</label>
-    {{ form.username }}
-  </div>
-  <div class="form-group">
-    <label for="{{ form.email.id_for_label }}">Correo electrónico:</label>
-    {{ form.email }}
-  </div>
-  <div class="form-group">
-    <label for="{{ form.password1.id_for_label }}">Contraseña:</label>
-    {{ form.password1 }}
-  </div>
-  <div class="form-group">
-    <label for="{{ form.password2.id_for_label }}">Confirmar contraseña:</label>
-    {{ form.password2 }}
-  </div>
-  <div class="form-group">
-    <label for="{{ form.group.id_for_label }}">Rol:</label>
-    {{ form.group }}
-  </div>
-
-  <input type="submit" value="Registrar" />
-</form>
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="text-center mt-3">
+        <h1>CREAR CUENTA</h1>
+      </div>
+      <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        <!-- Campo de usuario -->
+        <div class="form-group">
+          <label for="{{ form.username.id_for_label }}">Usuario:</label>
+          {{ form.username|add_class:"form-control" }}
+        </div>
+        <!-- Campo de contraseña -->
+        <div class="form-group">
+          <label for="{{ form.password.id_for_label }}">Contraseña:</label>
+          {{ form.password|add_class:"form-control" }}
+        </div>
+        <!-- Botón de inicio de sesión -->
+        <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+      </form>
+    </div>
+  </body>
+</html>
